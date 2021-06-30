@@ -6,13 +6,15 @@
     --light-red: hsl(356, 100%, 66%);
     --very-light-red: hsl(355, 100%, 74%);
     --very-dark-blue: hsl(208, 49%, 24%);
+    --very-dark-blue-75: hsla(208, 49%, 24%, 0.75);
     /* Neutral */
     --white: hsl(0, 0%, 100%);
     --grayish-blue: hsl(240, 2%, 79%);
+    --grayish-blue-50: hsl(240, 2%, 79%, 50%);
     --very-grayish-blue: hsl(207, 13%, 34%);
     --very-dark-black-blue: hsl(240, 10%, 16%);
     /* Gradient */
-    --vlred-to-lred: linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    --vlred-to-lred: linear-gradient(to right,hsl(13, 100%, 72%), hsl(353, 100%, 62%));
     --vdgray-blue-to-vddesaturated-blue: linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
     /* Typography */
     --fs-default: 16px;
@@ -36,9 +38,21 @@ body {
     width: 100%;
 }
 
+.hamburger-btn::before {
+    content: url(images/icon-hamburger.svg);
+}
+
+.hamburger-btn.opened::before {
+    content: url(images/icon-close.svg);
+}
+
 .hamburger-btn {
     border-style: none;
     padding: 0;
+}
+
+.hamburger-btn:focus {
+    box-shadow: none;
 }
 
 .hamburger-icon {
@@ -47,8 +61,10 @@ body {
 }
 
 #navmenu {
+    margin-top: 1.25rem;
     background-color: var(--white);
     border-radius: 5px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30);
 }
 
 .nav-item {
@@ -59,6 +75,14 @@ body {
     text-decoration: none;
 }
 
+.nav-btns {
+    padding: 1.25rem;
+}
+
+.nav-item-main {
+    margin-bottom: 0.75rem;
+}
+
 .nav-item-main:focus {
     box-shadow: none;
 }
@@ -67,17 +91,39 @@ body {
     content: url(images/icon-arrow-dark.svg);
 }
 
-.nav-btns {
-    padding: 1rem;
+.nav-item-main[collapsed="true"]{
+    color: var(--very-dark-blue-75);
 }
 
 .nav-links {
+    padding: 1.25rem;
     border-radius: 5px;
     background-color: hsl(240, 7%, 94%);
+    margin-bottom: 1.5rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--very-grayish-blue);
+    color: var(--very-dark-blue-75);
+}
+
+.nav-account {
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--grayish-blue-50);
+}
+
+.nav-account button {
+    font-weight: var(--fw-bold-set-one);
+    color: var(--very-dark-blue);
+    border: none;
+    line-height: 1.75rem;
+    width: 8rem;
+    border-radius: 20px;
+}
+
+#signup {
+    margin-top: .5rem;
+    color: var(--white);
+    background-image: var(--vlred-to-lred);
 }
 
 .showcase {
@@ -123,10 +169,15 @@ body {
     #navmenu {
         background-color: transparent;
         border-radius: 0;
+        box-shadow: none;
     }
 
     .nav-btns {
         padding: 0;
+    }
+
+    .nav-account {
+        border-top: none;
     }
 
     .nav-item {
@@ -135,6 +186,12 @@ body {
 
     .nav-item-main::after {
         content: url(images/icon-arrow-light.svg)
+    }
+
+    .nav-item-main:hover,
+    .nav-item-main[collapsed="true"]{
+        text-decoration: underline;
+        color: var(--white);
     }
 
     .nav-links {
@@ -154,4 +211,5 @@ body {
     .navbar-light .navbar-nav .nav-link:hover {
         color: var(--very-dark-black-blue);
     }
+
 }
