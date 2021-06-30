@@ -4,7 +4,7 @@ const connectNav = document.getElementById("connectNav"),
 
 function init(){
     connectBtn.addEventListener("click", handleClick);
-    
+        
 }
 
 function handleClick(event) {
