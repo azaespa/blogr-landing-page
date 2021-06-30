@@ -46,6 +46,40 @@ body {
     height: 100%;
 }
 
+#navmenu {
+    background-color: var(--white);
+    border-radius: 5px;
+}
+
+.nav-item {
+    font-family: inherit;
+    font-size: var(--fs-default);
+    font-weight: var(--fw-bold-set-one);
+    color: var(--very-dark-blue);
+    text-decoration: none;
+}
+
+.nav-item-main:focus {
+    box-shadow: none;
+}
+
+.nav-item-main::after {
+    content: url(images/icon-arrow-dark.svg);
+}
+
+.nav-btns {
+    padding: 1rem;
+}
+
+.nav-links {
+    border-radius: 5px;
+    background-color: hsl(240, 7%, 94%);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--very-grayish-blue);
+}
+
 .showcase {
     padding-top: 10rem;
     padding-bottom: 8rem;
@@ -84,3 +118,40 @@ body {
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 992px){
+    #navmenu {
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    .nav-btns {
+        padding: 0;
+    }
+
+    .nav-item {
+        color: var(--white);
+    }
+
+    .nav-item-main::after {
+        content: url(images/icon-arrow-light.svg)
+    }
+
+    .nav-links {
+        position: absolute;
+        background-color: var(--white);
+    }
+
+    .nav-links .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .navbar-light .navbar-nav .nav-link {
+        color: var(--very-grayish-blue);
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: var(--very-dark-black-blue);
+    }
+}

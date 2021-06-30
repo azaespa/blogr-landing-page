@@ -21,26 +21,29 @@
       <button class="navbar-toggler hamburger-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <img class="hamburger-icon" src="images/icon-hamburger.svg" alt="">
     </button>
-    </div>
     <div class="collapse navbar-collapse" id="navmenu">
-      <div class="navbar-nav text-center">
-        <div class="nav-item navbar-toggler" data-bs-toggle="collapse" data-bs-target="#product">Product</div>
-        <div class="nav-item navbar-toggler" data-bs-toggle="collapse" data-bs-target="#company">Company</div>
-        <div class="nav-item navbar-toggler" data-bs-toggle="collapse" data-bs-target="#connect">Connect</div>
-        <div class="collapse navbar-collapse" id="connect">
-          <div class="navbar-nav text-center">
-            <div class="nav-item">Contact</div>
-            <div class="nav-item">Newsletter</div>
-            <div class="nav-item">LinkedIn</div>
+      <div class="navbar-nav text-center nav-btns">
+        <a role="button" class="btn nav-item nav-item-main" data-bs-toggle="collapse" href="#product">Product </a>
+        <a role="button" class="btn nav-item nav-item-main" data-bs-toggle="collapse" href="#company">Company </a>
+        <div class="position-relative" id="connectNav">
+          <a role="button" class="btn nav-item nav-item-main" data-bs-toggle="collapse" href="#connect" id="connectBtn">Connect </a>
+          <div class="collapse nav-links" id="connect">
+            <div class="navbar-nav text-center">
+              <div class="nav-item"><a href="" class="nav-link">Contact</a></div>
+              <div class="nav-item"><a href="" class="nav-link">Newsletter</a></div>
+              <div class="nav-item"><a href="" class="nav-link">LinkedIn</a></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="navbar-nav text-center">
+      <div class="navbar-nav text-center ms-auto">
         <div class="nav-item"><button class="btn">Login</button></div>
         <div class="nav-item"><button class="btn">Sign Up</button></div>
       </div>
     </div>
+    </div>
   </nav>
+
   <!-- Showcase -->
   <section class="px-3 showcase">
     <div class="container">
@@ -136,5 +139,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
