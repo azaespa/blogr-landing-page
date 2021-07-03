@@ -58,16 +58,16 @@ body {
     margin-bottom: 0.75rem;
 }
 
-.nav-link:focus {
-    box-shadow: none;
-}
-
 .nav-link.main::after {
     content: url(images/icon-arrow-dark.svg);
 }
 
 .navbar-light .navbar-nav .nav-link[aria-expanded="true"]{
     color: var(--very-dark-blue-75);
+}
+
+.navbar-light .navbar-nav .nav-link[aria-expanded="false"]:focus {
+    color: var(--very-dark-blue);
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -170,6 +170,10 @@ body {
     .navbar-light .navbar-nav .nav-link.main:hover,
     .navbar-light .navbar-nav .nav-link.main[aria-expanded="true"]{
         text-decoration: underline;
+        color: var(--white);
+    }
+
+    .navbar-light .navbar-nav .nav-link[aria-expanded="false"]:focus {
         color: var(--white);
     }
 

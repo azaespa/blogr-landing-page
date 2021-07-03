@@ -29,3 +29,6 @@ collapsed attribute = to identify whether the element is collapsed or not
 --
 ---#login
 ---#signup
+
+collapse-lg
+arrow icon transition when collapsed
