@@ -2,10 +2,6 @@ const navbarToggler = document.querySelector(".navbar-toggler"),
     hamburgerIcon = navbarToggler.querySelector("#hamburger"),
     closeIcon = navbarToggler.querySelector("#close");
 
-const connectNav = document.getElementById("connectNav"),
-    connectBtn = connectNav.querySelector("#connectBtn"),
-    connectCollapse = connectNav.querySelector("#connect");
-
 function init(){
     navbarToggler.addEventListener("click", toggleNav);
 }

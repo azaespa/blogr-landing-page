@@ -13,12 +13,17 @@ collapsed attribute = to identify whether the element is collapsed or not
 	js: removed collapse attribute -> will now use aria-expanded attribute instead
 
 -.navmenu-items -> replaced with
-	html: .p-4 .p-lg-0
+	html: .p-4 .p-lg-0 .px-lg-4
 	css: removed all style
 --
----.nav-item-main
-----#connectNav
------.nav-item-main #connectBtn
+---.nav-item-main -> 
+	html: nav-link .main .secondary
+----#connectNav ->
+	html: removed 
+	js: removed
+-----#connectBtn ->
+	html: removed
+	js: removed
 -----.nav-links
 -.nav-account
 --
