@@ -1,38 +1,27 @@
-const hamburgerMenu = document.querySelector(".hamburger-btn"),
-    hamburgerIcon = hamburgerMenu.querySelector(".hamburger-icon");
+const navbarToggler = document.querySelector(".navbar-toggler"),
+    hamburgerIcon = navbarToggler.querySelector("#hamburger"),
+    closeIcon = navbarToggler.querySelector("#close");
 
 const connectNav = document.getElementById("connectNav"),
     connectBtn = connectNav.querySelector("#connectBtn"),
     connectCollapse = connectNav.querySelector("#connect");
 
 function init(){
-    hamburgerMenu.addEventListener("click", handleClickMenu)
-    connectBtn.addEventListener("click", handleClickNav);
-    
+    navbarToggler.addEventListener("click", toggleNav);
 }
 
-function handleClickMenu(event){
-    updateCollapseAttribute(hamburgerMenu);
-    if(hamburgerMenu.getAttribute("collapsed") !== "true"){
-        hamburgerMenu.classList.add("opened");
+function toggleNav(){
+    if(navbarToggler.getAttribute("aria-expanded") === "true"){
+        setDisplay(hamburgerIcon, "none");
+        setDisplay(closeIcon, "block");
     } else {
-        if(hamburgerMenu.classList.contains("opened")){
-            hamburgerMenu.classList.remove("opened");
-        }
+        setDisplay(closeIcon, "none");
+        setDisplay(hamburgerIcon, "block");
     }
 }
 
-function handleClickNav(event) {
-    const btn = event.target;
-    updateCollapseAttribute(btn);
-}
-
-function updateCollapseAttribute(btn) {
-    if(btn.getAttribute("collapsed") !== "true" && hamburgerMenu.getAttribute("aria-expanded") !== "true") {
-        return btn.setAttribute("collapsed", "true");
-    } else {
-        return btn.setAttribute("collapsed", "false");
-    }
+function setDisplay(element, display){
+    element.style.display = display;
 }
 
 init();
