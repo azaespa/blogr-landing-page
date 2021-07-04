@@ -25,7 +25,8 @@ collapsed attribute = to identify whether the element is collapsed or not
 	html: removed
 	js: removed
 -----.nav-links
--.nav-account
+-.nav-account -> 
+	html: .user-logged-out
 --
 ---#login
 ---#signup

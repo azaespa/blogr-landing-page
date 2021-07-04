@@ -92,13 +92,13 @@ body {
     background-color: hsl(240, 7%, 94%);
 }
 
-.nav-account {
+.user-logged-out {
     padding: 1.25rem 0;
     margin-bottom: 1rem;
     border-top: 1px solid var(--grayish-blue-50);
 }
 
-.nav-account button {
+.user-logged-out button {
     font-weight: var(--fw-bold-set-one);
     color: var(--very-dark-blue);
     border: none;
@@ -203,13 +203,13 @@ body {
         color: var(--very-dark-black-blue);
     }
 
-    .nav-account {
+    .user-logged-out {
         padding: 0;
         margin-bottom: 0;
         border-top: none;
     }
     
-    .nav-account button {
+    .user-logged-out button {
         font-weight: var(--fw-bold-set-one);
         color: var(--white);
         border: none;
