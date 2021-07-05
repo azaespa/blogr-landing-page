@@ -120,6 +120,8 @@ body {
     text-align: center;
     color: white;
     background: url(images/bg-pattern-intro.svg) center no-repeat, var(--vlred-to-lred) center;
+    background-size: 200%;
+    background-position-x: 30%;
     border-radius: 0 0 0 80px;
 }
 
