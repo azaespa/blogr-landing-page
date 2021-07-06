@@ -9,6 +9,7 @@
     --very-dark-blue-75: hsla(208, 49%, 24%, 0.75);
     /* Neutral */
     --white: hsl(0, 0%, 100%);
+    --white-75: hsl(0, 0%, 100%, 75%);
     --grayish-blue: hsl(240, 2%, 79%);
     --grayish-blue-50: hsl(240, 2%, 79%, 50%);
     --very-grayish-blue: hsl(207, 13%, 34%);
@@ -36,6 +37,11 @@ body {
 .navbar {
     position: absolute;
     width: 100%;
+}
+
+.navbar .container-fluid {
+    width: 77.4193%;
+    padding: 0;
 }
 
 #close {
@@ -102,15 +108,17 @@ body {
     font-weight: var(--fw-bold-set-one);
     color: var(--very-dark-blue);
     border: none;
-    line-height: 1.75rem;
+    line-height: 1rem;
     width: 8rem;
-    border-radius: 20px;
+    height: 3rem;
+    border-radius: 30px;
 }
 
 #signup {
     margin-top: .5rem;
     color: var(--white);
     background-image: var(--vlred-to-lred);
+    font-weight: var(--fw-bold-set-one);
 }
 
 .showcase {
@@ -125,12 +133,19 @@ body {
     border-radius: 0 0 0 80px;
 }
 
+.h1, h1 {
+    font-size: calc(2.05rem + 1.5vw);
+    letter-spacing: -0.125rem;
+}
+
 .showcase h1 {
     font-weight: var(--fw-bold-set-one);
 }
 
 .showcase p {
     font-weight: var(--fw-regular-set-one);
+    color: var(--white-75);
+    font-size: 1.125rem;
 }
 
 .showcase-btn {
@@ -213,21 +228,16 @@ body {
     }
     
     .user-logged-out button {
-        font-weight: var(--fw-bold-set-one);
         color: var(--white);
-        border: none;
-        line-height: 1.75rem;
-        width: 8rem;
-        border-radius: 20px;
     }
-    
+
     #login:hover {
         color: rgb(221, 221, 221);
     }
 
     #signup {
         margin-top: 0;
-        color: var(--very-light-red);
+        color: var(--light-red);
         background-image: none;
         background-color: var(--white);
     }
@@ -236,4 +246,12 @@ body {
         color: var(--light-red);
     }
 
+    .h1, h1 {
+        font-size: calc(2.65rem + 1.5vw);
+        letter-spacing: -0.125rem;
+    }
+
+    .showcase p {
+        font-size: 1.375rem;
+    }
 }
