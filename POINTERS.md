@@ -42,6 +42,7 @@ psd to html:
 -bootstrap
 -jquery
 
+MAKE SURE TO RESIZE THE IMG-DESIGN IN FIGMA FOR ACCURATE PX
 
 figma to html
 -h1

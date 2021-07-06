@@ -15,7 +15,8 @@
     --very-grayish-blue: hsl(207, 13%, 34%);
     --very-dark-black-blue: hsl(240, 10%, 16%);
     /* Gradient */
-    --vlred-to-lred: linear-gradient(to right,hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    --red-gradient-default: linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    --red-gradient-to-right: linear-gradient(to right,hsl(13, 100%, 72%), hsl(353, 100%, 62%));
     --vdgray-blue-to-vddesaturated-blue: linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
     /* Typography */
     --fs-default: 16px;
@@ -35,12 +36,23 @@ body {
 }
 
 .navbar {
+    padding: 0;
+    margin-top: 3.5rem;
     position: absolute;
     width: 100%;
 }
 
+.navbar-brand {
+    padding: 0;
+    width: 5.1875rem;
+}
+
+.navbar-brand img {
+    width: 100%;
+}
+
 .navbar .container-fluid {
-    width: 77.4193%;
+    width: 84.375%;
     padding: 0;
 }
 
@@ -109,7 +121,7 @@ body {
     color: var(--very-dark-blue);
     border: none;
     line-height: 1rem;
-    width: 8rem;
+    width: 8.5625rem;
     height: 3rem;
     border-radius: 30px;
 }
@@ -117,17 +129,17 @@ body {
 #signup {
     margin-top: .5rem;
     color: var(--white);
-    background-image: var(--vlred-to-lred);
+    background-image: var(--red-gradient-to-right);
     font-weight: var(--fw-bold-set-one);
 }
 
 .showcase {
-    padding-top: 10rem;
-    padding-bottom: 8rem;
+    padding-top: 12.625rem;
+    padding-bottom: 9.688rem;
     font-size: inherit;
     text-align: center;
     color: white;
-    background: url(images/bg-pattern-intro.svg) center no-repeat, var(--vlred-to-lred) center;
+    background: url(images/bg-pattern-intro.svg) center no-repeat, var(--red-gradient-default) center;
     background-size: 200%;
     background-position-x: 30%;
     border-radius: 0 0 0 80px;
@@ -136,22 +148,29 @@ body {
 .h1, h1 {
     font-size: calc(2.05rem + 1.5vw);
     letter-spacing: -0.125rem;
+    line-height: 1.197em;
 }
 
 .showcase h1 {
     font-weight: var(--fw-bold-set-one);
+    margin-bottom: 1.375rem;
 }
 
 .showcase p {
     font-weight: var(--fw-regular-set-one);
     color: var(--white-75);
     font-size: 1.125rem;
+    line-height: 1.278em;
+    margin-bottom: 2.833rem;
 }
 
 .showcase-btn {
     padding-top: 8px;
-    border-radius: 20px;
+    border-radius: 30px;
     font-weight: var(--fw-bold-set-one);
+    line-height: 0;
+    height: 3rem;
+    width: 8.5625rem;
 }
 
 #start {
@@ -171,6 +190,22 @@ body {
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media (min-width: 992px){
+
+    .navbar .container-fluid {
+        width: 77.4193%;
+        padding: 0;
+    }
+
+    .navbar-brand {
+        padding: 0;
+        width: 6.375rem;
+    }
+
+    .navbar .container-fluid {
+        width: 76.945%;
+        padding: 0;
+    }
+
     #navmenu {
         background-color: transparent;
         border-radius: 0;
@@ -243,15 +278,29 @@ body {
     }
 
     #signup:hover {
-        color: var(--light-red);
+        color: var(--very-light-red);
     }
 
     .h1, h1 {
         font-size: calc(2.65rem + 1.5vw);
         letter-spacing: -0.125rem;
+        line-height: 1em;
+    }
+
+    .showcase {
+        padding-top: 15.188rem;
+        padding-bottom: 9.5rem;
+        background: url(images/bg-pattern-intro.svg) center no-repeat, var(--red-gradient-to-right) center;
+    }
+
+    .showcase h1 {
+        font-weight: var(--fw-bold-set-one);
+        margin-bottom: 1.5rem;
     }
 
     .showcase p {
+        line-height: 1em;
         font-size: 1.375rem;
     }
+
 }
