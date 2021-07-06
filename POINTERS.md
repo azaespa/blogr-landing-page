@@ -33,3 +33,11 @@ collapsed attribute = to identify whether the element is collapsed or not
 
 collapse-lg
 arrow icon transition when collapsed
+
+psd to html:
+-quick delivery
+-clean semantic markup
+-proper comments
+-w3c validation
+-bootstrap
+-jquery
