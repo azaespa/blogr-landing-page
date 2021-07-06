@@ -45,7 +45,7 @@ psd to html:
 JUST MAKE SURE TO RESIZE THE IMG-DESIGN IN FIGMA FOR ACCURATE PX
 
 TODO NXT:
-navlink arrow icon toggle transition
+~~navlink arrow icon toggle transition~~
 showcase svg background resize reposition
 nav collapse on lg and up make it interactive with another collapse
 
