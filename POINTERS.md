@@ -42,13 +42,11 @@ psd to html:
 -bootstrap
 -jquery
 
-MAKE SURE TO RESIZE THE IMG-DESIGN IN FIGMA FOR ACCURATE PX
+JUST MAKE SURE TO RESIZE THE IMG-DESIGN IN FIGMA FOR ACCURATE PX
 
-figma to html
--h1
---fontsize +19px
---spacing -2px
--navbar width
---1440 / figma width + 19px
--button
---height: 0 === 12px
+TODO NXT:
+navlink arrow icon toggle transition
+showcase svg background resize reposition
+nav collapse on lg and up make it interactive with another collapse
+
+

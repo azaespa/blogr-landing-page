@@ -66,7 +66,7 @@ body {
 }
 
 #navmenu {
-    margin-top: 1.25rem;
+    margin-top: 2.25rem;
     background-color: var(--white);
     border-radius: 5px;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30);
@@ -112,7 +112,7 @@ body {
 
 .user-logged-out {
     padding: 1.25rem 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     border-top: 1px solid var(--grayish-blue-50);
 }
 
@@ -127,7 +127,7 @@ body {
 }
 
 #signup {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     color: var(--white);
     background-image: var(--red-gradient-to-right);
     font-weight: var(--fw-bold-set-one);
@@ -142,7 +142,7 @@ body {
     background: url(images/bg-pattern-intro.svg) center no-repeat, var(--red-gradient-default) center;
     background-size: 200%;
     background-position-x: 30%;
-    border-radius: 0 0 0 80px;
+    border-radius: 0 0 0 100px;
 }
 
 .h1, h1 {
@@ -175,6 +175,7 @@ body {
 
 #start {
     color: var(--light-red);
+    background-color: var(--white);
 }
 
 #start:hover {
@@ -184,6 +185,7 @@ body {
 
 #learn:hover{
     color: var(--light-red);
+    background-color: var(--white);
 }
 
 .attribution { font-size: 11px; text-align: center; }
