@@ -1,314 +1,339 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
 
 :root {
-    /* Primary */
-    --light-red: hsl(356, 100%, 66%);
-    --very-light-red: hsl(355, 100%, 74%);
-    --very-dark-blue: hsl(208, 49%, 24%);
-    --very-dark-blue-75: hsla(208, 49%, 24%, 0.75);
-    /* Neutral */
-    --white: hsl(0, 0%, 100%);
-    --white-75: hsl(0, 0%, 100%, 75%);
-    --grayish-blue: hsl(240, 2%, 79%);
-    --grayish-blue-50: hsl(240, 2%, 79%, 50%);
-    --very-grayish-blue: hsl(207, 13%, 34%);
-    --very-dark-black-blue: hsl(240, 10%, 16%);
-    /* Gradient */
-    --red-gradient-default: linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
-    --red-gradient-to-right: linear-gradient(to right,hsl(13, 100%, 72%), hsl(353, 100%, 62%));
-    --vdgray-blue-to-vddesaturated-blue: linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
-    /* Typography */
-    --fs-default: 16px;
-    --ff-set-one: 'Overpass', sans-serif;
-    --fw-regular-set-one: 300;
-    --fw-bold-set-one: 600;
-    --ff-set-two: 'Ubuntu', sans-serif;
-    --fw-regular-set-two: 400;
-    --fw-medium-set-two: 500;
-    --fw-bold-set-two: 700;
+  /* Primary */
+  --light-red: hsl(356, 100%, 66%);
+  --very-light-red: hsl(355, 100%, 74%);
+  --very-dark-blue: hsl(208, 49%, 24%);
+  --very-dark-blue-75: hsla(208, 49%, 24%, 0.75);
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --white-75: hsl(0, 0%, 100%, 75%);
+  --grayish-blue: hsl(240, 2%, 79%);
+  --grayish-blue-50: hsl(240, 2%, 79%, 50%);
+  --very-grayish-blue: hsl(207, 13%, 34%);
+  --very-dark-black-blue: hsl(240, 10%, 16%);
+  /* Gradient */
+  --red-gradient-default: linear-gradient(
+    hsl(13, 100%, 72%),
+    hsl(352, 100%, 62%)
+  );
+  --red-gradient-to-right: linear-gradient(
+    to right,
+    hsl(13, 100%, 72%),
+    hsl(352, 100%, 62%)
+  );
+  --vdgray-blue-to-vddesaturated-blue: linear-gradient(
+    hsl(237, 17%, 21%),
+    hsl(237, 23%, 32%)
+  );
+  /* Typography */
+  --fs-default: 16px;
+  --ff-set-one: "Overpass", sans-serif;
+  --fw-regular-set-one: 300;
+  --fw-bold-set-one: 600;
+  --ff-set-two: "Ubuntu", sans-serif;
+  --fw-regular-set-two: 400;
+  --fw-medium-set-two: 500;
+  --fw-bold-set-two: 700;
 }
 
 body {
-    font-family: var(--ff-set-one);
-    font-size: var(--fs-default);
-    font-weight: var(--fw-regular-set-one);
+  font-family: var(--ff-set-one);
+  font-size: var(--fs-default);
+  font-weight: var(--fw-regular-set-one);
 }
 
 .navbar {
-    padding: 0;
-    margin-top: 3.5rem;
-    position: absolute;
-    width: 100%;
+  padding: 0;
+  margin-top: 3.5rem;
+  position: absolute;
+  width: 100%;
 }
 
 .navbar-brand {
-    padding: 0;
-    width: 5.1875rem;
+  padding: 0;
+  width: 5.1875rem;
 }
 
 .navbar-brand img {
-    width: 100%;
+  width: 100%;
 }
 
 .navbar .container-fluid {
-    width: 84.375%;
-    padding: 0;
+  width: 84.375%;
+  padding: 0;
 }
 
 #close {
-    display: none;
-    width: 100%;
+  display: none;
+  width: 100%;
 }
 
 .navbar-toggler:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 #navmenu {
-    margin-top: 2.25rem;
-    background-color: var(--white);
-    border-radius: 5px;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30);
+  margin-top: 2.25rem;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3);
 }
 
 .nav-link.main {
-    margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .arrow {
-    content: url(images/icon-arrow-dark.svg);
-    vertical-align: middle;
+  content: url(images/icon-arrow-dark.svg);
+  vertical-align: middle;
 }
 
 .nav-link.main[aria-expanded="true"] .arrow {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.navbar-light .navbar-nav .nav-link[aria-expanded="true"]{
-    color: var(--very-dark-blue-75);
+.navbar-light .navbar-nav .nav-link[aria-expanded="true"] {
+  color: var(--very-dark-blue-75);
 }
 
 .navbar-light .navbar-nav .nav-link[aria-expanded="false"]:focus {
-    color: var(--very-dark-blue);
+  color: var(--very-dark-blue);
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-family: inherit;
-    font-size: var(--fs-default);
-    font-weight: var(--fw-bold-set-one);
-    text-decoration: none;
-    color: var(--very-dark-blue);
+  font-family: inherit;
+  font-size: var(--fs-default);
+  font-weight: var(--fw-bold-set-one);
+  text-decoration: none;
+  color: var(--very-dark-blue);
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: var(--very-dark-blue-75);
+  color: var(--very-dark-blue-75);
 }
 
 .navbar-light .navbar-nav .nav-link.secondary {
-    color: var(--very-dark-blue-75);
+  color: var(--very-dark-blue-75);
 }
 
-
 .nav-links {
-    border-radius: 5px;
-    background-color: hsl(240, 7%, 94%);
+  border-radius: 5px;
+  background-color: hsl(240, 7%, 94%);
 }
 
 .user-logged-out {
-    padding: 1.25rem 0;
-    margin-bottom: 0.75rem;
-    border-top: 1px solid var(--grayish-blue-50);
+  padding: 1.25rem 0;
+  margin-bottom: 0.75rem;
+  border-top: 1px solid var(--grayish-blue-50);
 }
 
 .user-logged-out button {
-    font-weight: var(--fw-bold-set-one);
-    color: var(--very-dark-blue);
-    border: none;
-    line-height: 1rem;
-    width: 8.5625rem;
-    height: 3rem;
-    border-radius: 30px;
+  font-weight: var(--fw-bold-set-one);
+  color: var(--very-dark-blue);
+  border: none;
+  line-height: 1rem;
+  width: 8.5625rem;
+  height: 3rem;
+  border-radius: 30px;
 }
 
 #signup {
-    margin-top: 0.5rem;
-    color: var(--white);
-    background-image: var(--red-gradient-to-right);
-    font-weight: var(--fw-bold-set-one);
+  margin-top: 0.5rem;
+  color: var(--white);
+  background-image: var(--red-gradient-to-right);
+  font-weight: var(--fw-bold-set-one);
 }
 
 .showcase {
-    padding-top: 12.625rem;
-    padding-bottom: 9.688rem;
-    font-size: inherit;
-    text-align: center;
-    color: white;
-    background: url(images/bg-pattern-intro.svg) center no-repeat, var(--red-gradient-default) center;
-    background-size: 200%;
-    background-position-x: 30%;
-    border-radius: 0 0 0 100px;
+  padding-top: 12.625rem;
+  padding-bottom: 9.688rem;
+  font-size: inherit;
+  text-align: center;
+  color: white;
+  background: url(images/bg-pattern-intro.svg) no-repeat,
+    var(--red-gradient-default) no-repeat;
+  /* 1205x1205 */
+  background-size: 321%, 100%;
+  background-position-y: 32%;
+  background-position-x: left 36%;
+  border-radius: 0 0 0 100px;
 }
 
-.h1, h1 {
-    font-size: calc(2.05rem + 1.5vw);
-    letter-spacing: -0.125rem;
-    line-height: 1.197em;
+.h1,
+h1 {
+  font-size: calc(2.05rem + 1.5vw);
+  letter-spacing: -0.125rem;
+  line-height: 1.197em;
 }
 
 .showcase h1 {
-    font-weight: var(--fw-bold-set-one);
-    margin-bottom: 1.375rem;
+  font-weight: var(--fw-bold-set-one);
+  margin-bottom: 1.375rem;
 }
 
 .showcase p {
-    font-weight: var(--fw-regular-set-one);
-    color: var(--white-75);
-    font-size: 1.125rem;
-    line-height: 1.278em;
-    margin-bottom: 2.833rem;
+  font-weight: var(--fw-regular-set-one);
+  color: var(--white-75);
+  font-size: 1.125rem;
+  line-height: 1.278em;
+  margin-bottom: 2.833rem;
 }
 
 .showcase-btn {
-    padding-top: 8px;
-    border-radius: 30px;
-    font-weight: var(--fw-bold-set-one);
-    line-height: 0;
-    height: 3rem;
-    width: 8.5625rem;
+  padding-top: 8px;
+  border-radius: 30px;
+  font-weight: var(--fw-bold-set-one);
+  line-height: 0;
+  height: 3rem;
+  width: 8.5625rem;
 }
 
 #start {
-    color: var(--light-red);
-    background-color: var(--white);
+  color: var(--light-red);
+  background-color: var(--white);
 }
 
 #start:hover {
+  background-color: transparent;
+  color: var(--white);
+}
+
+#learn:hover {
+  color: var(--light-red);
+  background-color: var(--white);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 576px) {
+  .showcase {
+    background-position-y: 35%;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar .container-fluid {
+    width: 77.4193%;
+    padding: 0;
+  }
+
+  .navbar-brand {
+    padding: 0;
+    width: 6.375rem;
+  }
+
+  .navbar .container-fluid {
+    width: 76.945%;
+    padding: 0;
+  }
+
+  #navmenu {
+    margin-top: 1rem;
     background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .navbar-light .navbar-nav .nav-link.main {
     color: var(--white);
-}
+  }
 
-#learn:hover{
-    color: var(--light-red);
+  .navbar-light .navbar-nav .nav-link.main:hover,
+  .navbar-light .navbar-nav .nav-link.main[aria-expanded="true"] {
+    text-decoration: underline;
+    color: var(--white);
+  }
+
+  .navbar-light .navbar-nav .nav-link[aria-expanded="false"]:focus {
+    color: var(--white);
+  }
+
+  .navbar-light .navbar-nav .nav-link.secondary {
+    color: var(--very-dark-blue);
+  }
+
+  .navbar-light .navbar-nav .nav-link.secondary:hover {
+    color: var(--very-dark-black-blue);
+  }
+
+  .nav-links {
+    position: absolute;
     background-color: var(--white);
-}
+    width: 10rem;
+  }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+  .nav-links a {
+    text-align: left;
+  }
 
-@media (min-width: 992px){
+  .arrow {
+    content: url(images/icon-arrow-light.svg);
+  }
 
-    .navbar .container-fluid {
-        width: 77.4193%;
-        padding: 0;
-    }
+  .navbar-light .navbar-nav .nav-link {
+    color: var(--very-grayish-blue);
+  }
 
-    .navbar-brand {
-        padding: 0;
-        width: 6.375rem;
-    }
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: var(--very-dark-black-blue);
+  }
 
-    .navbar .container-fluid {
-        width: 76.945%;
-        padding: 0;
-    }
+  .user-logged-out {
+    padding: 0;
+    margin-bottom: 0;
+    border-top: none;
+  }
 
-    #navmenu {
-        margin-top: 1rem;
-        background-color: transparent;
-        border-radius: 0;
-        box-shadow: none;
-    }
+  .user-logged-out button {
+    color: var(--white);
+  }
 
-    .navbar-light .navbar-nav .nav-link.main {
-        color: var(--white);
-    }
+  #login:hover {
+    color: rgb(221, 221, 221);
+  }
 
-    .navbar-light .navbar-nav .nav-link.main:hover,
-    .navbar-light .navbar-nav .nav-link.main[aria-expanded="true"]{
-        text-decoration: underline;
-        color: var(--white);
-    }
+  #signup {
+    margin-top: 0;
+    color: var(--light-red);
+    background-image: none;
+    background-color: var(--white);
+  }
 
-    .navbar-light .navbar-nav .nav-link[aria-expanded="false"]:focus {
-        color: var(--white);
-    }
+  #signup:hover {
+    color: var(--very-light-red);
+  }
 
-    .navbar-light .navbar-nav .nav-link.secondary {
-        color: var(--very-dark-blue);
-    }
+  .h1,
+  h1 {
+    font-size: calc(2.65rem + 1.5vw);
+    letter-spacing: -0.125rem;
+    line-height: 1em;
+  }
 
-    .navbar-light .navbar-nav .nav-link.secondary:hover {
-        color: var(--very-dark-black-blue);
-    }
+  .showcase {
+    padding-top: 15.188rem;
+    padding-bottom: 9.5rem;
+    background: url(images/bg-pattern-intro.svg) center no-repeat,
+      var(--red-gradient-to-right);
+    background-position-x: left 25%;
+  }
 
-    .nav-links {
-        position: absolute;
-        background-color: var(--white);
-        width: 10rem;
-    }
+  .showcase h1 {
+    font-weight: var(--fw-bold-set-one);
+    margin-bottom: 1.5rem;
+  }
 
-    .nav-links a {
-        text-align: left;
-    }
-
-    .arrow {
-        content: url(images/icon-arrow-light.svg);
-    }
-
-    .navbar-light .navbar-nav .nav-link {
-        color: var(--very-grayish-blue);
-    }
-
-    .navbar-light .navbar-nav .nav-link:hover {
-        color: var(--very-dark-black-blue);
-    }
-
-    .user-logged-out {
-        padding: 0;
-        margin-bottom: 0;
-        border-top: none;
-    }
-    
-    .user-logged-out button {
-        color: var(--white);
-    }
-
-    #login:hover {
-        color: rgb(221, 221, 221);
-    }
-
-    #signup {
-        margin-top: 0;
-        color: var(--light-red);
-        background-image: none;
-        background-color: var(--white);
-    }
-
-    #signup:hover {
-        color: var(--very-light-red);
-    }
-
-    .h1, h1 {
-        font-size: calc(2.65rem + 1.5vw);
-        letter-spacing: -0.125rem;
-        line-height: 1em;
-    }
-
-    .showcase {
-        padding-top: 15.188rem;
-        padding-bottom: 9.5rem;
-        background: url(images/bg-pattern-intro.svg) center no-repeat, var(--red-gradient-to-right) center;
-    }
-
-    .showcase h1 {
-        font-weight: var(--fw-bold-set-one);
-        margin-bottom: 1.5rem;
-    }
-
-    .showcase p {
-        line-height: 1em;
-        font-size: 1.375rem;
-    }
-
+  .showcase p {
+    line-height: 1em;
+    font-size: 1.375rem;
+  }
 }
