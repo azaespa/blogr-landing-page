@@ -10,6 +10,7 @@
   /* Neutral */
   --white: hsl(0, 0%, 100%);
   --white-75: hsl(0, 0%, 100%, 75%);
+  --gray: hsl(0, 0%, 98%);
   --grayish-blue: hsl(240, 2%, 79%);
   --grayish-blue-50: hsl(240, 2%, 79%, 50%);
   --very-grayish-blue: hsl(207, 13%, 34%);
@@ -156,7 +157,7 @@ body {
   background: url(images/bg-pattern-intro.svg) no-repeat,
     var(--red-gradient-default) no-repeat;
   /* 1205x1205 */
-  background-size: 321%, 100%;
+  background-size: 321%;
   background-position-y: 32%;
   background-position-x: left 36%;
   border-radius: 0 0 0 100px;
@@ -167,6 +168,12 @@ h1 {
   font-size: calc(2.05rem + 1.5vw);
   letter-spacing: -0.125rem;
   line-height: 1.197em;
+}
+
+.h2, h2 {
+  font-size: calc(1.42rem + .9vw);
+  font-weight: var(--fw-bold-set-one);
+  line-height: 1em;
 }
 
 .showcase h1 {
@@ -206,6 +213,19 @@ h1 {
   background-color: var(--white);
 }
 
+.designed-for-future {
+  color: var(--very-dark-blue);
+  padding: 6.625rem 0;
+}
+
+.designed-for-future > h2 {
+  margin-bottom: 2.938rem;
+}
+
+.designed-for-future img {
+  margin-bottom: 3.563rem;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -218,9 +238,17 @@ h1 {
   .showcase {
     background-position-y: 35%;
   }
+  .designed-for-future img {
+    margin-bottom: 0;
+    width: 75%;
+  }
 }
 
 @media (min-width: 992px) {
+  body {
+    background-color: var(--gray);
+  }
+
   .navbar .container-fluid {
     width: 77.4193%;
     padding: 0;
@@ -335,5 +363,10 @@ h1 {
   .showcase p {
     line-height: 1em;
     font-size: 1.375rem;
+  }
+
+  .designed-for-future img {
+    margin-bottom: 0;
+    width: 100%;
   }
 }
