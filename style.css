@@ -151,7 +151,6 @@ body {
 .showcase {
   padding-top: 12.625rem;
   padding-bottom: 9.688rem;
-  font-size: inherit;
   text-align: center;
   color: white;
   background: url(images/bg-pattern-intro.svg) no-repeat,
@@ -165,13 +164,13 @@ body {
 
 .h1,
 h1 {
-  font-size: calc(2.05rem + 1.5vw);
+  font-size: calc(1.837rem + 1.5vw);
   letter-spacing: -0.125rem;
   line-height: 1.197em;
 }
 
 .h2, h2 {
-  font-size: calc(1.42rem + .9vw);
+  font-size: calc(1.4771rem + .9vw);
   font-weight: var(--fw-bold-set-one);
   line-height: 1em;
 }
@@ -179,6 +178,7 @@ h1 {
 .showcase h1 {
   font-weight: var(--fw-bold-set-one);
   margin-bottom: 1.375rem;
+  width: 12ch;
 }
 
 .showcase p {
@@ -222,6 +222,26 @@ h1 {
   margin-bottom: 2.938rem;
 }
 
+.designed-for-future .inner-section {
+  width: 80%;
+}
+
+.designed-for-future .inner-section section {
+  margin-bottom: 2.469rem;
+}
+
+.designed-for-future .inner-section h2 {
+  margin-bottom: 1.313rem;
+  line-height: 1.227em;
+}
+
+.designed-for-future .inner-section p {
+  font-size: 0.938rem;
+  line-height: 1.732em;
+  letter-spacing: 0.05em;
+  color: var(--very-dark-blue-75);
+}
+
 .designed-for-future img {
   margin-bottom: 3.563rem;
 }
@@ -237,10 +257,6 @@ h1 {
 @media (min-width: 576px) {
   .showcase {
     background-position-y: 35%;
-  }
-  .designed-for-future img {
-    margin-bottom: 0;
-    width: 75%;
   }
 }
 
