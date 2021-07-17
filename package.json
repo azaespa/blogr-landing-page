@@ -1,0 +1,22 @@
+{
+  "name": "blogr-landing-page",
+  "version": "1.0.0",
+  "description": "![Design preview for the Blogr landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjazanes/blogr-landing-page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjazanes/blogr-landing-page/issues"
+  },
+  "homepage": "https://github.com/pjazanes/blogr-landing-page#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.2"
+  }
+}
