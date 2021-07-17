@@ -1,4 +1,462 @@
 //insert below all bootstrap variables you want to override
+$primary: hsl(208, 49%, 24%);
+
+//adding custom colors to bootstrap's $theme-colors
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+$custom-theme-colors: (
+  "white": #fff,
+);
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
 //import bootstrap
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+//import fonts
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+
+//Typography
+$fs-default: 16px;
+$ff-overpass: "Overpass", sans-serif;
+$fw-overpass-regular: 300;
+$fw-overpass-bold: 600;
+//Primary Colors
+$light-red: hsl(356, 100%, 66%);
+$very-light-red: hsl(355, 100%, 74%);
+$very-dark-blue: hsl(208, 49%, 24%);
+$very-dark-blue-75: hsla(208, 49%, 24%, 0.75);
+//Neutral Colors
+$white: hsl(0, 0%, 100%);
+$white-75: hsla(0, 0%, 100%, 75%);
+$gray: hsl(0, 0%, 98%);
+$grayish-blue: hsl(240, 2%, 79%);
+$grayish-blue-75: hsl(240, 7%, 94%);
+$grayish-blue-50: hsla(240, 2%, 79%, 50%);
+$very-grayish-blue: hsl(207, 13%, 34%);
+$very-dark-black-blue: hsl(240, 10%, 16%);
+//Gradient Colors
+$red-gradient-default: linear-gradient(hsl(13, 100%, 72%), hsl(352, 100%, 62%));
+$red-gradient-to-right: linear-gradient(
+  to right,
+  hsl(13, 100%, 72%),
+  hsl(352, 100%, 62%)
+);
+$gray-gradient-to-right: linear-gradient(
+  to left,
+  hsla(0, 0%, 98%, 0.95),
+  hsl(0, 0%, 98%)
+);
+$vdgray-blue-to-vddesaturated-blue: linear-gradient(
+  hsl(237, 17%, 21%),
+  hsl(237, 23%, 32%)
+);
+
+//media queries
+@mixin desktop {
+  @include media-breakpoint-up(lg) {
+    @content;
+  }
+}
+
+//Body
+body {
+  font-family: $ff-overpass;
+  font-size: $fs-default;
+  font-weight: $fw-overpass-regular;
+  background-color: $white;
+
+  @include desktop {
+    background-color: $gray;
+  }
+}
+
+//Navbar
+.navbar {
+  margin-top: 3.5rem;
+
+  .container-fluid {
+    width: 84.375%;
+
+    @include desktop {
+      width: 76.945%;
+    }
+
+    //Blogr logo
+    .navbar-brand {
+      width: 5.1875rem;
+
+      @include desktop {
+        width: 6.375rem;
+      }
+    }
+
+    //Toggler of #navmenu
+    //Container of hamburger-navmenu & close-navmenu icons
+    .navbar-toggler {
+      &:focus {
+        box-shadow: none;
+      }
+
+      //Initial display of close-navmenu will remain none until the navbar-toggler was clicked
+      //Display will be manipulated using jQuery
+      #close-navmenu {
+        display: none;
+      }
+    }
+
+    //Navmenu contains main, secondary nav-links,
+    //log-in and sign-up buttons
+    //background color will change on lg-breakpoint (desktop)
+    #navmenu {
+      margin-top: 2.25rem;
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      background-color: $white;
+
+      @include desktop {
+        margin-top: 1rem;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: transparent;
+      }
+
+      .nav-link {
+        font-family: $ff-overpass;
+        font-size: $fs-default;
+        font-weight: $fw-overpass-bold;
+        text-decoration: none;
+
+        &.main {
+          color: $very-dark-blue;
+          margin-bottom: 0.75rem;
+
+          @include desktop {
+            color: $white;
+          }
+
+          &:hover {
+            color: $very-dark-blue-75;
+
+            @include desktop {
+              text-decoration: underline;
+              color: $white;
+            }
+          }
+
+          //The arrow icon will rotate upside-down when a nav-link.main was clicked
+          &[aria-expanded="true"] {
+            color: $very-dark-blue-75;
+
+            @include desktop {
+              text-decoration: underline;
+              color: $white;
+            }
+
+            .arrow {
+              transform: rotate(180deg);
+            }
+          }
+
+          //After collapsing, nav-link.main won't leave on the focus state unless you click again on the outside of it
+          //resulting of it not going back to its initial color of very-dark-blue
+          &[aria-expanded="false"]:focus {
+            color: $very-dark-blue;
+
+            @include desktop {
+              color: $white;
+            }
+
+            &:hover {
+              color: $very-dark-blue-75;
+
+              @include desktop {
+                color: $white;
+              }
+            }
+          }
+
+          .arrow {
+            content: url(../images/icon-arrow-dark.svg);
+            vertical-align: middle;
+
+            @include desktop {
+              content: url(../images/icon-arrow-light.svg);
+            }
+          }
+        }
+
+        &.secondary {
+          color: $very-dark-blue-75;
+
+          @include desktop {
+            color: $very-dark-blue;
+            text-align: left;
+          }
+
+          &:hover {
+            color: $very-dark-black-blue;
+          }
+        }
+      }
+
+      .secondary-links-container {
+        background-color: $grayish-blue-75;
+        border-radius: 5px;
+
+        @include desktop {
+          background-color: $white;
+          position: absolute;
+          width: 10rem;
+        }
+      }
+
+      .user-logged-out {
+        padding: 1.25rem 0;
+        margin-bottom: 0.75rem;
+        border-top: 1px solid $grayish-blue-50;
+
+        @include desktop {
+          padding: 0;
+          margin-bottom: 0;
+          border-top: none;
+        }
+
+        button {
+          color: $very-dark-blue;
+          font-weight: $fw-overpass-bold;
+          border: none;
+          line-height: 1rem;
+          width: 8.5625rem;
+          height: 3rem;
+          border-radius: 30px;
+
+          @include desktop {
+            color: $white;
+          }
+
+          &#login:hover {
+            color: rgb(221, 221, 221);
+          }
+
+          &#signup {
+            margin-top: 0.5rem;
+            color: $white;
+            background-image: $red-gradient-to-right;
+            font-weight: $fw-overpass-bold;
+
+            @include desktop {
+              margin-top: 0;
+              color: $light-red;
+              background-image: none;
+              background-color: $white;
+            }
+
+            &:hover {
+              @include desktop {
+                color: $very-light-red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Showcase
+.showcase {
+  padding-top: 12.625rem;
+  padding-bottom: 9.688rem;
+  background: url(../images/bg-pattern-intro.svg) no-repeat,
+    $red-gradient-default no-repeat;
+  background-position-x: left 36%;
+  background-position-y: 32%;
+  background-size: 321%;
+  text-align: center;
+  color: $white;
+  border-radius: 0 0 0 100px;
+
+  //Gradient color will change direction on desktop
+  //Background pattern will resize as well
+  @include desktop {
+    padding-top: 15.188rem;
+    padding-bottom: 9.5rem;
+    background: url(../images/bg-pattern-intro.svg) center no-repeat,
+      $red-gradient-to-right;
+    background-position-x: left 25%;
+  }
+
+  & h1 {
+    font-size: calc(1.837rem + 1.5vw);
+    font-weight: $fw-overpass-bold;
+    letter-spacing: -0.125rem;
+    line-height: 1.197em;
+    width: 12ch;
+    margin-bottom: 1.375rem;
+
+    @include desktop {
+      font-size: calc(2.65rem + 1.5vw);
+      letter-spacing: -0.125rem;
+      line-height: 1em;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+  }
+
+  & p {
+    font-weight: $fw-overpass-bold;
+    color: $white-75;
+    font-size: 1.125rem;
+    line-height: 1.278em;
+    margin-bottom: 2.833rem;
+
+    @include desktop {
+      font-size: 1.375rem;
+      line-height: 1em;
+    }
+  }
+
+  & .btn {
+    padding-top: 8px;
+    border-radius: 30px;
+    font-weight: $fw-overpass-bold;
+    line-height: 0;
+    height: 3rem;
+    width: 8.5625rem;
+
+    &#start {
+      color: $light-red;
+      background-color: $white;
+
+      &:hover {
+        color: $white;
+        background-color: transparent;
+      }
+    }
+
+    &#learn:hover {
+      color: $light-red;
+      background-color: $white;
+    }
+  }
+}
+
+//Designed for Future
+.designed-for-future {
+  padding: 6.625rem 0;
+  color: $very-dark-blue;
+  margin-bottom: 7.531rem;
+  overflow-x: hidden;
+
+  @include desktop {
+    padding: 9.938rem 0;
+  }
+
+  & .title {
+    font-size: calc(1.4771rem + .9vw);
+    font-weight: $fw-overpass-bold;
+    margin-bottom: 2.938rem;
+
+    @include desktop {
+      margin-bottom: 7.063rem;
+    }
+  }
+
+  & .content {
+    @include desktop {
+      width: 76.95%;
+    }
+
+    & .inner-section {
+      width: 75%;
+
+      @include desktop {
+        width: unset;
+        align-self: flex-start;
+        background-image: $gray-gradient-to-right;
+        border-radius: 10px;
+      }
+  
+      & .introduction,
+      & .content-management {
+        margin-bottom: 2.563rem;
+
+        @include desktop {
+          margin-bottom: 4.75rem;
+        }
+  
+        & h2 {
+          font-size: calc(1.4771rem + .9vw);
+          margin-bottom: 1.313rem;
+          font-weight: $fw-overpass-bold;
+          line-height: 1.227em;
+
+          @include desktop {
+            text-align: left;
+            font-size: calc(1.63rem + .9vw);
+          }
+        }
+  
+        & p {
+          line-height: 1.732em;
+          letter-spacing: 0.03em;
+          color: $very-dark-blue-75;
+
+          @include desktop {
+            text-align: left;
+            max-width: 55.5ch;
+          }
+        }
+      }
+    }
+  
+    & img {
+      margin-bottom: 3.063rem;
+  
+      @include desktop {
+        margin-bottom: 0;
+        position: absolute;
+        top: 4.438rem;
+        right: -17rem;
+        z-index: -1;
+        height: auto;
+      }
+    }
+  }
+}
+
+//Art infrastructure
+.art-infrastructure {
+  background: url(../images/bg-pattern-circles.svg) no-repeat, $vdgray-blue-to-vddesaturated-blue;
+  background-size: cover;
+  background-position: top -15rem center, center;
+  border-radius: 0 100px 0 100px;
+  padding-bottom: 7.125rem;
+  color: $white;
+
+  & img {
+    width: 100%;
+    margin-top: -11.938rem;
+    margin-bottom: 1.063rem;
+  }
+
+  & section {
+    width: 85%;
+
+    & h1 {
+      font-size: calc(2.125rem + 1.5vw);
+      font-weight: $fw-overpass-bold;
+      letter-spacing: normal;
+      line-height: 1.287em;
+      margin-bottom: 1.125rem;
+    }
+
+    & p {
+      line-height: 1.732em;
+      letter-spacing: 0.03em;
+      margin-bottom: 0;
+    }
+  }
+}
